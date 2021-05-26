@@ -1,0 +1,188 @@
+
+<div class="nys-modal__wrapper" style="display: flex;">
+<div class="nys-modal__content">
+<div class="nys-modal__close">X</div>
+
+<div class="nys-modal__body">
+<div class="nys-modal__logo override" style="height: 115px; background: url('http://web.archive.org/web/20210309165500im_/https://www.governor.ny.gov/sites/governor.ny.gov/files/thumbnails/image/NYS-NewYorkTough-Hashtag-Logo.png'); background-size: contain; background-position-x: center; background-repeat: no-repeat; width: 70%;">&nbsp;</div>
+
+<h2 class="nys-modal__title black">GET DAILY COVID-19 AND VACCINE UPDATES</h2>
+
+<p class="nys-modal__btn-wrapper"><a class="nys-modal__btn" href="http://web.archive.org/web/20210309165500/https://now.ny.gov/page/s/coronavirus-updates">Sign up here</a></p>
+</div>
+</div>
+</div>
+<script>
+// Initalize the modal.
+init();
+/**
+ * Init
+ */
+function init(){ 
+  // This functionality may change in the future.
+  if(getLocalStorage() === 'true') return;
+  const modal = document.getElementsByClassName('nys-modal__wrapper')[0];
+  const close = document.getElementsByClassName('nys-modal__close')[0];
+  const visitBtn = document.getElementsByClassName('nys-modal__btn')[0];
+  const governor = document.querySelector('.governor-wrap');
+  if(governor !== null) {
+    governor.parentNode.insertBefore(modal, governor)
+  }
+  // On load show the modal.
+  modal.style.display = "flex";
+  close.addEventListener('click', handleClose)
+  window.addEventListener('click', handleWindowClick)
+  visitBtn.addEventListener('click', handleClose);
+}
+function handleClose() {
+  const modal = document.getElementsByClassName('nys-modal__wrapper')[0];
+  modal.style.display = 'none';
+  setLocalStorage();
+}
+function handleWindowClick(event) {
+  const modal = document.getElementsByClassName('nys-modal__wrapper')[0];
+  if(event.target === modal) {
+    modal.style.display = 'none';
+    setLocalStorage();
+  }
+}
+function setLocalStorage(){
+  localStorage.setItem('nys_modal', 'true');
+}
+function getLocalStorage(){
+  return localStorage.getItem('nys_modal');
+}
+</script>
+<style type="text/css">/* Modal Content */
+/* Modal Content */
+.nys-modal__content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.5s;
+  max-width: 624px;
+  padding: 25px;
+  text-align: center;
+}
+.nys-modal__btn-wrapper {
+  padding: 0px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 767px) {
+  .nys-modal__content {
+    padding: 50px;
+  }
+  .nys-modal__btn-wrapper{
+    width: 60%;
+  }
+}
+.nys-modal__logo {
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+  background-position: center;
+}
+/* Modal Close Button */
+.nys-modal__close {
+  top: 0;
+  position: absolute;
+  right: 0;
+  padding: 15px;
+  font-size: 30px;
+  background-color: #128EC3;
+  color: #FFFFFF;
+  transition: ease-in-out 250ms background-color;
+}
+.nys-modal__close:hover{
+  cursor: pointer;
+  background: #d51515;
+}
+/* The Modal (background) */
+.nys-modal__wrapper {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.75); /* Black w/ opacity */
+}
+.nys-modal__title {
+  font-family: "Proxima Nova",sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  letter-spacing: 1px;
+  line-height: 34px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+.nys-modal__title.black{
+  color: #000000;
+}
+.nys-modal__title.blue{
+  color: #128EC3;
+}
+.nys-modal__body{
+  color: #62666A;
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+}
+.nys-modal__footer {
+  color: #62666A;
+  font-family: "Proxima Nova", sans-serif;
+  font-style: italic;
+  font-size: 14px;
+}
+.nys-modal__btn:visited{
+  color: #FFFFFF;
+}
+a.nys-modal__btn{
+  color: white;
+  text-decoration: none;
+}
+.nys-modal__btn {
+  font-family: "Proxima Nova",sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  background-color: #128EC3;
+  padding: 16px 24px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  transition: ease-in-out 250ms background-color;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.nys-modal__btn:hover{
+  cursor: pointer;
+  background-color: #24387E;
+}
+.nys-modal__close .fa-times:before{
+  font-family: "Fontawesome";
+  font-style: normal;
+}
+@keyframes animatetop {
+  from {
+    top: -300px; opacity: 0
+  }
+  to {
+    top: 0; opacity: 1
+  }
+}
+</style>
