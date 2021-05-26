@@ -9,4 +9,4 @@ For this to work on an ACSF site you need administrator access to use the WYSIWY
 5. Click the "Source" button in the editor to turn off source code view
 6. Save the page
 
-*note* if you change the editor view to something other than "Full HTML" or if you do not have administrator access, then problems will happen with saving the page or the bot embed code may not work properly. 
+**note:** if you change the editor view to something other than "Full HTML" or if you do not have administrator access, then problems will happen with saving the page or the bot embed code may not work properly. 
