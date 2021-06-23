@@ -1,0 +1,808 @@
+<div style='text-align: center'>   <style>
+        article.node--program--full .frame.html .program-embed .cto-container {
+            text-align: left !important;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            color: black;
+            /* font-family: ProximaNova, sans-serif; */
+            min-width: 324px;
+        }
+
+        h2,
+        h1,
+        h3 p {
+            margin: 0;
+        }
+
+        .cto-container h1 {
+            /* width: 880px; */
+            height: auto;
+            background-color: #ffffff;
+            /* font-family: ProximaNova; */
+            font-size: 48px;
+            color: #d5820d;
+            font-weight: 700;
+            text-decoration: none solid rgb(213, 130, 13);
+            letter-spacing: -2px;
+        }
+
+        .cto-header {
+
+            width: 100%;
+            height: 285px;
+            background-color: #128ec3;
+            margin-top: 20px;
+            /* font-family: ProximaNova, sans-serif; */
+        }
+
+        .cto-container {
+
+            width: 100%;
+            padding: 35px 10px
+        }
+
+        .subHeadingText {
+            width: 98%;
+            min-width: 324px;
+            text-align:center;
+        }
+
+        .cto-subHeader {
+            width: 98%;
+            height: 58px;
+            background-color: #ffffff;
+            /* font-family: Proxima Nova; */
+            font-size: 2em;
+            color: #d5820d;
+            font-weight: 700;
+            text-decoration: none solid rgb(213, 130, 13);
+            letter-spacing: -2px;
+        }
+
+        .compliantLinks {
+            padding-top: 20px !important;
+            margin-top: 20px !important;
+        }
+
+        /* .cto-row::after {
+        content: "";
+        clear: both;
+        display: table;
+        margin-right: -15px;
+        margin-left: -15px;
+      } */
+
+
+        .cto-col-9 .cto-col-m9 {
+            padding-left: 0px !important;
+        }
+
+        .cto-col-5 {
+            padding-left: 0px !important;
+        }
+
+        .cto-row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* flex-wrap: wrap; */
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        label {
+
+            margin: 50px 0;
+            /* padding: 50px 0; */
+            font-weight: bold;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        #totalSavingsOutput {
+            color: #378f2b;
+            font-size: 3rem;
+        }
+
+        .ten_year,
+        .output {
+
+            /* margin-left: -140px;
+    float: left; */
+            /* margin-top: 30px; */
+            font-size: 3em;
+            color: green;
+        }
+
+
+
+        input[type="number"] {
+            width: 150px;
+            height: 45px;
+            margin-bottom: 10px;
+            margin-left: -2px;
+        }
+
+        select {
+            width: 250px;
+            height: 45px;
+            margin: 10px 0px;
+
+        }
+
+        .input-large {
+            height: calc(1.5em + 1rem + 2px);
+            padding: .5rem 1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            margin-top: 10px;
+
+        }
+
+        .input-group-text {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: .375rem .75rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+        }
+
+        span {
+            clear: both;
+
+        }
+
+        /* h1 {
+        color: white;
+        font-family: ProximaNova, sans-serif;
+        font-weight: bold;
+        margin: 0;
+    } */
+
+        .cto-btn {
+
+            background-color: #24387e;
+            color: white;
+            padding: 10px 25px 10px 25px;
+            border-radius: 0px;
+            font-size: 1.5em;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            text-decoration: none;
+            transition: ease-in-out .1s;
+            border: none;
+            width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .cto-btn:hover {
+            background-color: #24387e;
+            color: white;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            text-decoration: none;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            transition: ease-in-out .1s;
+        }
+
+        .span-heading {
+            font-weight: bold;
+            font-size: 1.1em;
+            /* margin-bottom: 10px; */
+        }
+
+        .dollar {
+            float: left;
+            height: 45px;
+            margin-top: 10px;
+            border-radius: 0;
+        }
+
+        .hidden {
+            display: none
+        }
+
+        /* For mobile phones: */
+        [class*="cto-col-"] {
+            width: 100%;
+            /* float: left; */
+        }
+
+        @media only screen and (min-width: 600px) {
+
+            /* For tablets: */
+            .cto-col-m-1 {
+                width: 8.33%;
+            }
+
+            .cto-col-m-2 {
+                width: 16.66%;
+            }
+
+            .cto-col-m-3 {
+                width: 25%;
+            }
+
+            .cto-col-m-4 {
+                width: 33.33%;
+            }
+
+            .co-col-m-5 {
+                width: 41.66%;
+            }
+
+            .cto-col-m-6 {
+                width: 50%;
+            }
+
+            .cto-col-m-7 {
+                width: 58.33%;
+            }
+
+            .cto-col-m-8 {
+                width: 66.66%;
+            }
+
+            .cto-col-m-9 {
+                width: 75%;
+            }
+
+            .cto-col-m-10 {
+                width: 83.33%;
+            }
+
+            .cto-col-m-11 {
+                width: 91.66%;
+            }
+
+            .cto-col-m-12 {
+                width: 100%;
+            }
+
+            [class*="cto-col-m"] {
+                float: left
+            }
+        }
+
+
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+
+            article.node--program--full .frame.html .program-embed .cto-container {
+                text-align: left !important;
+            }
+
+            [class*=cto-col-] {
+                float: left;
+                padding: 16px;
+            }
+
+            .cto-col-9.cto-col-m9 {
+                padding-left: 0;
+            }
+
+            h1,
+            h2,
+            p {
+                margin: 0;
+            }
+
+            .cto-container {
+
+                width: 100%;
+                padding: 35px 100px
+            }
+
+            .cto-subHeader {
+                font-size: 48px;
+                margin-top: 20px;
+            }
+
+            .cto-container .taxSavingsOutput {
+                color: #378f2b;
+                font-size: 60px;
+            }
+
+            .cto-col-1 {
+                width: 8.33%;
+            }
+
+            .cto-col-2 {
+                width: 16.66%;
+            }
+
+            .cto-col-3 {
+                width: 25%;
+            }
+
+            .cto-col-4 {
+                width: 33.33%;
+            }
+
+            .cto-col-5 {
+                width: 41.66%;
+                padding-left: 0px;
+            }
+
+            .cto-col-6 {
+                width: 50%;
+            }
+
+            .cto-col-7 {
+                width: 58.33%;
+            }
+
+            .cto-col-8 {
+                width: 66.66%;
+            }
+
+            .cto-col-9 {
+                width: 75%;
+            }
+
+            .cto-col-10 {
+                width: 83.33%;
+            }
+
+            .cto-col-11 {
+                width: 91.66%;
+            }
+
+            .cto-col-12 {
+                width: 100%;
+            }
+
+
+            p {
+                line-height: 1.7em;
+                font-size: 1.2em;
+            }
+
+            /* aligning result for desktop*/
+            .output {
+
+                margin-left: -140px;
+                float: left;
+                margin-top: 30px;
+                font-size: 60px;
+                color: green;
+            }
+
+            .ten_year {
+                margin-left: 150px;
+                margin-top: 30px;
+                font-size: 60px;
+                color: green;
+            }
+
+
+            .float-left {
+                float: left
+            }
+
+            .dollar {
+                float: left;
+                height: 45px;
+                margin-top: 10px;
+                border-radius: 0;
+            }
+
+            .span-heading {
+                font-weight: bold;
+                font-size: 1.1em;
+                margin-bottom: 10px;
+                /* margin-top: 20px; */
+            }
+
+            .cto-btn {
+                margin-top: 50px;
+            }
+        }
+
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .cto-container .taxSavingsOutput {
+            color: #378f2b;
+            font-size: 60px;
+        }
+
+
+        @media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+            article.node--program--full .frame.html .program-embed .cto-container {
+                text-align: left !important;
+            }
+
+            .cto-container {
+                padding: 5px !important;
+            }
+
+            select {
+                width: 190px;
+            }
+
+            .cto-btn {
+                width: 200px;
+                font-size: 1.1em;
+                height: 50px;
+            }
+
+            .output {
+                font-size: 35px;
+            }
+
+            .ten_year {
+                font-size: 35px;
+                /* margin-top: 10px; */
+                margin-left: -15px;
+            }
+
+            .cto-col-3 {
+                width: 0%;
+            }
+
+            .cto-col-5 {
+                padding-left: 0px;
+                margin-left: -10px
+            }
+
+
+
+
+            [class*=cto-col-] {
+                float: left;
+                /* padding: 16px; */
+            }
+
+            h2 {
+                margin: 15px
+            }
+
+            .cto-col-9.cto-col-m9 {
+                width: 100%;
+
+            }
+
+            .cto-subHeader {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<!-- <div id="nygov-universal-navigation" class="nygov-universal-container" data-iframe="true"
+    data-updated="2014-11-07 08:30">
+    <noscript>
+        <iframe width="100%" height="86px" src="//static-assets.ny.gov/load_global_menu/ajax?iframe=true"
+            frameborder="0" style="border:none; overflow:hidden; width:100%; height:86px;" scrolling="no">
+            Your browser does not support iFrames
+        </iframe>
+    </noscript>
+    <script type="text/javascript">
+        var _NY = {
+            HOST: "static-assets.ny.gov",
+            BASE_HOST: "www.ny.gov",
+            hideSettings: false,
+            hideSearch: false
+        };
+        (function (document, bundle, head) {
+            head = document.getElementsByTagName('head')[0];
+            bundle = document.createElement('script');
+            bundle.type = 'text/javascript';
+            bundle.async = true;
+            bundle.src = "//static-assets.ny.gov/sites/all/widgets/universal-navigation/js/dist/global-nav-bundle.js";
+            head.appendChild(bundle);
+        }(document));
+    </script>
+</div> -->
+
+</head>
+
+<body>
+
+    <!-- <div class="cto-header">
+                <h1 >Make the Property Tax Cap Permanent</h1>
+            </div> -->
+
+    <div class="cto-container">
+
+
+        <h2 style="text-align:center">Property Tax Cap Savings Calculator</h5>
+        <p class="subHeadingText">
+            Enter your 2018 property taxes and the county where you reside to see your estimated savings if the tax cap
+            was made permanent.
+        </p>
+
+        <h1 class="cto-subHeader">Calculate Your Savings</h1>
+
+        <form class="row" onsubmit="return false">
+            <div class="">
+
+                <div class="cto-col-5 cto-col-m-12">
+
+                    <div>
+                        <div>
+                            <label>2018 Property Taxes</label>
+                        </div>
+
+
+                        <span class="dollar input-group-text">$</span>
+                        <input type="number" min="1" class="input-large" required step="any" id="currentTaxes">
+                    </div>
+
+                    <div>
+                        <div style="margin-top: 10px;">
+                            <label for="exampleSelect1">Select County</label>
+                        </div>
+
+                        <select required class="input-large" id="countySelect">
+                            <option disabled value="" selected>Select County</option>
+                            <option value="5.4497822477306,1.6716045127790">Albany</option>
+                            <option value="3.5383725445660,1.8137209786849">Allegany</option>
+                            <option value="5.0062955152019,2.1060646763138">Broome</option>
+                            <option value="3.5383725445660,1.8137209786849">Cattaraugus</option>
+                            <option value="4.3247430129208,1.4412611367225">Cayuga</option>
+                            <option value="3.5383725445660,1.8137209786849">Chautauqua</option>
+                            <option value="5.0062955152019,2.1060646763138">Chemung</option>
+                            <option value="5.0062955152019,2.1060646763138">Chenango</option>
+                            <option value="5.4332202710470,2.4348523299675">Clinton</option>
+                            <option value="5.4497822477306,1.6716045127790">Columbia</option>
+                            <option value="4.3247430129208,1.4412611367225">Cortland</option>
+                            <option value="5.0062955152019,2.1060646763138">Delaware</option>
+                            <option value="6.1879769528022,1.8969887554186">Dutchess</option>
+                            <option value="3.5383725445660,1.8137209786849">Erie</option>
+                            <option value="5.4332202710470,2.4348523299675">Essex</option>
+                            <option value="5.4332202710470,2.4348523299675">Franklin</option>
+                            <option value="4.1608782146576,1.7746580714378">Fulton</option>
+                            <option value="4.4464863760265,1.7417936441086">Genesee</option>
+                            <option value="5.4497822477306,1.6716045127790">Greene</option>
+                            <option value="5.4332202710470,2.4348523299675">Hamilton</option>
+                            <option value="4.1608782146576,1.7746580714378">Herkimer</option>
+                            <option value="5.4332202710470,2.4348523299675">Jefferson</option>
+                            <option value="5.4332202710470,2.4348523299675">Lewis</option>
+                            <option value="4.4464863760265,1.7417936441086">Livingston</option>
+                            <option value="4.3247430129208,1.4412611367225">Madison</option>
+                            <option value="4.4464863760265,1.7417936441086">Monroe</option>
+                            <option value="4.1608782146576,1.7746580714378">Montgomery</option>
+                            <option value="5.6121904480460,1.9430082398006">Nassau</option>
+                            <option value="3.5383725445660,1.8137209786849">Niagara</option>
+                            <option value="4.1608782146576,1.7746580714378">Oneida</option>
+                            <option value="4.3247430129208,1.4412611367225">Onondaga</option>
+                            <option value="4.4464863760265,1.7417936441086">Ontario</option>
+                            <option value="6.1879769528022,1.8969887554186">Orange</option>
+                            <option value="4.4464863760265,1.7417936441086">Orleans</option>
+                            <option value="4.3247430129208,1.4412611367225">Oswego</option>
+                            <option value="4.1608782146576,1.7746580714378">Otsego</option>
+                            <option value="6.1879769528022,1.8969887554186">Putnam</option>
+                            <option value="5.4497822477306,1.6716045127790">Rensselaer</option>
+                            <option value="6.1879769528022,1.8969887554186">Rockland</option>
+                            <option value="5.4497822477306,1.6716045127790">Saratoga</option>
+                            <option value="5.4497822477306,1.6716045127790">Schenectady</option>
+                            <option value="4.1608782146576,1.7746580714378">Schoharie</option>
+                            <option value="5.0062955152019,2.1060646763138">Schuyler</option>
+                            <option value="4.4464863760265,1.7417936441086">Seneca</option>
+                            <option value="5.4332202710470,2.4348523299675">St. Lawrence</option>
+                            <option value="5.0062955152019,2.1060646763138">Steuben</option>
+                            <option value="5.6121904480460,1.9430082398006">Suffolk</option>
+                            <option value="6.1879769528022,1.8969887554186">Sullivan</option>
+                            <option value="5.0062955152019,2.1060646763138">Tioga</option>
+                            <option value="5.0062955152019,2.1060646763138">Tompkins</option>
+                            <option value="6.1879769528022,1.8969887554186">Ulster</option>
+                            <option value="5.4497822477306,1.6716045127790">Warren</option>
+                            <option value="5.4497822477306,1.6716045127790">Washington</option>
+                            <option value="4.4464863760265,1.7417936441086">Wayne</option>
+                            <option value="6.1879769528022,1.8969887554186">Westchester</option>
+                            <option value="4.4464863760265,1.7417936441086">Wyoming</option>
+                            <option value="4.4464863760265,1.7417936441086">Yates</option>
+                        </select>
+                    </div>
+
+
+                    <button type="submit" class="cto-btn" onclick="calculateTaxSavings()">Calculate
+                        Savings</button>
+
+                </div>
+
+                <div class="hidden row" id="hide">
+                    <div class="cto-col cto-col-7 cto-col-m-7" style="padding:0px;">
+
+                        <h2 class="cto-col-12">Estimated Savings</h5>
+
+                        <div class="cto-col cto-col-6">
+                            <b style="display: block;">Through 2018</b>
+                            <h1 id="totalPastSavingsOutput" class="taxSavingsOutput" id="totalSavingsOutput">$0</h1>
+                        </div>
+
+                        <div class="cto-col cto-col-6">
+                            <b>Next 10 years</b>
+
+                            <h1 id="totalFutureSavingsOutput" class="taxSavingsOutput">$0</h1>
+                        </div>
+                        <br>
+                    </div>
+
+                    <div class="cto-col-7 cto-col-m-7">
+                        <h2 style="margin: 0px 0px 20px 0px; color: #24387e; font-size: 2em;">Make the Property Tax Cap Permanent.</h5>
+                        <p class="mt-3" style="font-size: .9em;"> Savings are based on the 10-year average annual regional growth rate prior to the tax cap
+                            (2000-2010) <span id="rateWithoutCap"></span> and the
+                            regional average
+                            growth rate during the first six years of the tax cap (2011-2017) <span
+                                id="rateWithCap"></span>.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <script>
+
+        var currentTaxes = 0;
+        var countyRate = 0;
+        var totalSavings = 0;
+        var withoutCap = 0;
+        var withCap = 0;
+        var countyCapRate = 0;
+
+
+        var taxes2011 = 0
+
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0
+        })
+
+        function calculateTaxSavings() {
+
+            currentTaxes = document.getElementById("currentTaxes");
+            countyRate = document.getElementById("countySelect");
+
+
+            if (currentTaxes.checkValidity() && countyRate.checkValidity()) {
+                document.querySelector('#hide').classList.remove('hidden')
+
+                totalSavings = 0;
+                currentTaxes = +currentTaxes.value;
+
+                let countyValues = countyRate.value.split(",");
+                //countyRate = +(countyValues[0] / 100).toFixed(3);
+                //countyCapRate = +(countyValues[1] / 100).toFixed(3);
+
+                countyRate = +(countyValues[0] / 100);
+                countyCapRate = +(countyValues[1] / 100);
+
+                console.log("county uncapped rate:", countyRate);
+                console.log("county capped rate:", countyCapRate);
+
+                calculatePastSavings();
+                calculateFutureSavings();
+            }
+        }
+
+        function calculatePastSavings() {
+
+            totalSavings = 0
+
+
+            taxes2011 = Math.round(PV(countyCapRate, 7, 1, -Math.abs(currentTaxes), 0));
+
+            // taxes2011 = (((((((currentTaxes/(1+countyCapRate))/(1+countyCapRate))/(1+countyCapRate))/(1+countyCapRate))/(1+countyCapRate))/(1+countyCapRate))/(1+countyCapRate));
+
+            withoutCap = +taxes2011;
+            withCap = +taxes2011;
+
+            console.log("taxes2011", taxes2011);
+
+
+            console.log("current taxes:", currentTaxes);
+            console.log("county:", countyRate)
+
+            for (let i = 0; i < 7; i++) {
+
+                withoutCap = Math.round(withoutCap * (countyRate + 1));
+                withCap = Math.round(withCap * (countyCapRate + 1));
+
+                totalSavings += Math.round((withoutCap) - (withCap));
+
+                // currentTaxes = withoutCap;
+
+                console.log(currentTaxes)
+
+                console.log("total tax savings year", i, totalSavings)
+                console.log("withoutCap year", i, withoutCap)
+                console.log("withCap year", i, withCap)
+            }
+
+
+            document.getElementById("rateWithoutCap").innerHTML = 'of <b>' + (countyRate * 100).toFixed(1) + '%</b>';
+            document.getElementById("rateWithCap").innerHTML = 'of <b>' + (countyCapRate * 100).toFixed(1) + '%</b>';
+
+            totalSavings = formatter.format(Math.round(totalSavings))
+
+            console.log("total tax savings1:", totalSavings)
+            // $('#totalSavingsOutput').text(totalSavings);
+            document.getElementById("totalPastSavingsOutput").innerText = totalSavings;
+        }
+
+        function calculateFutureSavings() {
+
+            totalSavings = 0;
+
+            //withCap = currentTaxes;
+            //withoutCap = currentTaxes;
+
+            for (let i = 0; i < 10; i++) {
+
+                withoutCap = Math.round(withoutCap * (countyRate + 1));
+                withCap = Math.round(withCap * (countyCapRate + 1));
+
+                totalSavings += Math.round((withoutCap) - (withCap));
+
+                // currentTaxes = withoutCap;
+
+                //console.log(currentTaxes)
+
+                console.log("total tax savings year", i, totalSavings)
+                console.log("withoutCap year", i, withoutCap)
+                console.log("withCap year", i, withCap)
+            }
+
+
+            totalSavings = formatter.format(Math.round(totalSavings))
+            document.getElementById("totalFutureSavingsOutput").innerText = totalSavings;
+            console.log("total tax savings2:", totalSavings);
+        }
+
+        function PV(rate, periods, payment, future, type) {
+            // Initialize type
+            var type = (typeof type === 'undefined') ? 0 : type;
+
+            // Evaluate rate and periods (TODO: replace with secure expression evaluator)
+            rate = eval(rate);
+            periods = eval(periods);
+
+            // Return present value
+            // if (rate === 0) {
+            // return - payment * periods - future;
+            // } else {
+            // return (((1 - Math.pow(1 + rate, periods)) / rate) * payment * (1 + rate * type) - future) / Math.pow(1 + rate, periods);
+            return Math.abs(future * (1 / Math.pow(1 + rate, periods)));
+            // }
+
+        }
+
+    </script></div>
