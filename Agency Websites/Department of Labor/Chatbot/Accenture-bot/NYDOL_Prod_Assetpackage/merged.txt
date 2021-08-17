@@ -5,7 +5,6 @@
 }
 
 body {
-    /* background-color: #c4d8e2; */
 	background-image: url(./assets/icons/rectangle.png);
     background-repeat: no-repeat;
     background-size: 1400px 800px;
@@ -15,18 +14,9 @@ body {
     background-color: white;
     width: 416px;
     height: 500px;
-    /* height: calc(100vh - 44px); */
     z-index: 10;
     border-radius: 0px 0px 14px 14px;
 }
-
-/* .responsive {
-    height: 560px !important;
-}
-
-.responsiveMac {
-    height: calc(100vh - 150px) !important;
-} */
 
 #chat-window {
     display: none;
@@ -71,7 +61,6 @@ body {
     cursor: pointer;
     margin-right: -40px;
     margin-top: 8px;
-    /* width: 30px; */
     float: right;
 }
 
@@ -151,20 +140,16 @@ body {
 .bot-icon {
     height: 70px;
     width: 70px;
-    /* max-height: 100%; */
     position: fixed;
     overflow: hidden;
     bottom: 0px;
     right: 20px;
-    /* width: 360px; */
-    /* background: linear-gradient(90deg, #252525 0%, #313131 100%); */
     color: white;
     font-size: 1.3rem;
     border-radius: 14px 14px 0px 0px;
     line-height: 1;
     transition: all .3s ease-out;
     cursor: pointer;
-    /* margin-right: 1rem; */
     z-index: 99999;
 }
 
@@ -205,7 +190,6 @@ span.sub_head {
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .btn_iconClose {
         margin-right: -35px;
-        /* width: 100px; */
     }
     .icon_up {
         width: 24px;
@@ -232,11 +216,6 @@ span.sub_head {
     background-color: #BB0000;
 }
 
-/* @media only screen and (min-width: 860px) {
-  #chat-frame {
-    height: 450px !important;
-  } */
-
 /* Responsive chat for 200% and small screens */
 
 @media only screen and (max-width: 959px) {
@@ -252,25 +231,17 @@ span.sub_head {
     #main-container #chat-wrapper, #main-container #chat-wrapper #chat-window, #main-container #chat-wrapper #chat-window #chat-frame {
         width: 100%;
         height: 100%;
-    }
-    /* .responsiveMac {
-        height: calc(100vh - 44px) !important;
-    } */
+    }  
 }
 
-/* #ftwrap {
-    margin-bottom: 100px;
-} */
-
 ------------------------------------------------------------2-HTML------------------------------------------------------------
-
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
 <body>
-    <img id="logo" class="bot-icon" src="./assets/icons/NyDol-Bot-Icon.png" onclick="botIcon()" alt="logo">
-    <img id="close-logo" class="bot-icon" src="./assets/icons/NyDOL-close-chat.png" alt="logo">
+    <img id="logo" tabindex="0" class="bot-icon" src="./assets/icons/NyDol-Bot-Icon.png" onclick="botIcon()" alt="logo">
+    <img id="close-logo" tabindex="0" class="bot-icon" src="./assets/icons/NyDOL-close-chat.png" alt="logo">
     <div class="main-container" id="main-container" role="application">
         <div id="chat-wrapper" style="display: flex; flex-direction: column">
             <!-- To handle keyboard operations Remove OnClick from below chat_on div-->
@@ -301,77 +272,97 @@ span.sub_head {
             </div>
         </div>
     </div>
-
 ------------------------------------------------------------3-Script------------------------------------------------------------
 
-     <script>
+<script>
         var x = document.getElementById("chat_on");
         var y = document.getElementById("chat_off");
         var z = document.getElementById('chat-frame').src;
-		var iframURL = 'https://uitest.srv12-va.com/agent/'
+        var mainContainer = document.getElementById('main-container');
+        var botLogo = document.getElementById('logo');
+        var closeLogo = document.getElementById('close-logo');
+        document.getElementById('main-container').style.display = 'none';
+        document.getElementById('close-logo').style.display = 'none';
 
-        // if (window.navigator.userAgent.match(/Mobile/i) || window.navigator.userAgent.match(/iPhone/i) || window.navigator.userAgent.match(/iPad/i)) {
-        //     document.getElementById('chat-frame').classList.add("responsive");
-        // } else if (window.navigator.userAgent.match(/Macintosh/i)) {
-        //     document.getElementById('chat-frame').classList.add("responsiveMac");
-        // } else {
-        //     document.getElementById('chat-frame').classList.remove("responsive");
-        // }
+        function botIcon() {
+            toggleForm();
+            mainContainer.style.display = 'flex';
+            botLogo.style.display = 'none'
+            if (mainContainer.style.display === 'flex') {
+                document.getElementById('close-logo').style.display = 'flex';
+            }
+
+            if ((z === '') || (z === null)) {
+                document.getElementById('chat-frame').src = 'https://ui.srv12-va.com/agent/'
+                z = document.getElementById('chat-frame').src;
+            }
+        }
+
+        botLogo.addEventListener('keydown', function () {
+            console.log('opening chatbot using kewdown', event.keyCode) 
+            if ((event.keyCode === 38) || (event.keyCode === 40) || (event.keyCode === 32) || (event.keyCode === 13)) {
+                botIcon();
+            }
+
+        })
+
+        closeLogo.addEventListener('click', close => {
+            toggleForm();
+            document.getElementById('chat-frame').src = 'https://ui.srv12-va.com/agent/';
+            mainContainer.style.display = 'none';
+            if (mainContainer.style.display === 'none') {
+                closeLogo.style.display = 'none';
+                botLogo.style.display = 'flex';
+            }
+        })
+
+        closeLogo.addEventListener('keydown', function() {
+            console.log('close logo',event.keyCode)
+            botLogo.style.display = 'flex'
+            if ((event.keyCode === 38) || (event.keyCode === 40) || (event.keyCode === 32) || (event.keyCode === 13)) {
+                toggleForm();
+                mainContainer.style.display = 'none';
+            if (mainContainer.style.display === 'none') {
+                closeLogo.style.display = 'none';
+                botLogo.style.display = 'flex';
+            }
+            }
+        })
 
         // To handle keyboard operations and mouse click starts here
         document.getElementById('chat_off').addEventListener('mousedown', function () {
             toggleForm();
             if ((z === '') || (z === null)) {
-                document.getElementById('chat-frame').src = iframURL
+                document.getElementById('chat-frame').src = 'https://ui.srv12-va.com/agent/'
                 z = document.getElementById('chat-frame').src
             }
 
-        });
-
-        // keydown event on heading area to open the chatBot
-        document.getElementById('chat_off').addEventListener('keydown', function () {
-            // To handle keyboard operations for 38 (keyUp) 40 (keydown) 32 (Space) 13 (enter)
-            if ((event.keyCode === 38) || (event.keyCode === 40) || (event.keyCode === 32) || (event.keyCode === 13)) {
-                toggleForm();
-                if ((z === '') || (z === null)) {
-                    document.getElementById('chat-frame').src = iframURL
-                    z = document.getElementById('chat-frame').src
-                }
-            }
-        });
-
-        // keyDown event on arrowUp to open chatBot
-        document.getElementById('arrowUp').addEventListener('keydown', function () {
-            // To handle keyboard operations for 38 (keyUp) 40 (keydown) 32 (Space) 13 (enter)
-            if ((event.keyCode === 38) || (event.keyCode === 40) || (event.keyCode === 32) || (event.keyCode === 13)) {
-                toggleForm();
-                if ((z === '') || (z === null)) {
-                    document.getElementById('chat-frame').src = iframURL
-                    z = document.getElementById('chat-frame').src
-                }
-
-            }
         });
 
         // closing chatBot
         // mousedown event on heading area to close the chatBot
         document.getElementById('chat_on').addEventListener('mousedown', function () {
             toggleForm();
+            mainContainer.style.display = 'none';
+            if (mainContainer.style.display === 'none') {
+                closeLogo.style.display = 'none'
+                botLogo.style.display = 'flex'
+            }
         });
 
         //keydown event on heading area to close the chatbot
         document.getElementById('chat_on').addEventListener('keydown', function () {
+            console.log('chat_on', event.keyCode)
             if ((event.keyCode === 38) || (event.keyCode === 40) || (event.keyCode === 32) || (event.keyCode === 13)) {
                 toggleForm();
+                mainContainer.style.display = 'none';
+                if (mainContainer.style.display === 'none') {
+                closeLogo.style.display = 'none'
+                botLogo.style.display = 'flex'
+                }
             }
         });
-        
-        // To handle keyboard operations for 38 (keyUp) 40 (keydown) 32 (Space)
-        document.getElementById('close').addEventListener('keydown', function () {
-            if ((event.keyCode === 13) || (event.keyCode === 40) || (event.keyCode === 32) || (event.keyCode === 38)) {
-                toggleForm();
-            }
-        });
+
         // To handle keyboard operations and mouse click end here
         function toggleForm() {
             if (y.style.display === "block") {

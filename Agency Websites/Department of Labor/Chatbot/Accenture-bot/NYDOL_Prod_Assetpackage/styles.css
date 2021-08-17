@@ -4,7 +4,6 @@
 }
 
 body {
-    /* background-color: #c4d8e2; */
 	background-image: url(./assets/icons/rectangle.png);
     background-repeat: no-repeat;
     background-size: 1400px 800px;
@@ -14,18 +13,9 @@ body {
     background-color: white;
     width: 416px;
     height: 500px;
-    /* height: calc(100vh - 44px); */
     z-index: 10;
     border-radius: 0px 0px 14px 14px;
 }
-
-/* .responsive {
-    height: 560px !important;
-}
-
-.responsiveMac {
-    height: calc(100vh - 150px) !important;
-} */
 
 #chat-window {
     display: none;
@@ -70,7 +60,6 @@ body {
     cursor: pointer;
     margin-right: -40px;
     margin-top: 8px;
-    /* width: 30px; */
     float: right;
 }
 
@@ -150,20 +139,16 @@ body {
 .bot-icon {
     height: 70px;
     width: 70px;
-    /* max-height: 100%; */
     position: fixed;
     overflow: hidden;
     bottom: 0px;
     right: 20px;
-    /* width: 360px; */
-    /* background: linear-gradient(90deg, #252525 0%, #313131 100%); */
     color: white;
     font-size: 1.3rem;
     border-radius: 14px 14px 0px 0px;
     line-height: 1;
     transition: all .3s ease-out;
     cursor: pointer;
-    /* margin-right: 1rem; */
     z-index: 99999;
 }
 
@@ -204,7 +189,6 @@ span.sub_head {
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .btn_iconClose {
         margin-right: -35px;
-        /* width: 100px; */
     }
     .icon_up {
         width: 24px;
@@ -231,11 +215,6 @@ span.sub_head {
     background-color: #BB0000;
 }
 
-/* @media only screen and (min-width: 860px) {
-  #chat-frame {
-    height: 450px !important;
-  } */
-
 /* Responsive chat for 200% and small screens */
 
 @media only screen and (max-width: 959px) {
@@ -252,11 +231,10 @@ span.sub_head {
         width: 100%;
         height: 100%;
     }
-    /* .responsiveMac {
-        height: calc(100vh - 44px) !important;
-    } */
+    .close_icon {
+        width: 50px;
+        margin-right: 50px;
+        border: 1px solid white;
+    }
+    
 }
-
-/* #ftwrap {
-    margin-bottom: 100px;
-} */
