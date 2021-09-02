@@ -1,6 +1,8 @@
 # 4 across Icon Frame for WYSIWYG
 
-This is a 4 across icon frame with heading and text for embed in an ACSF wysiwyg, currently used on [https://covid19vaccine.health.ny.gov/excelsior-pass]
+This is a 4 across icon frame with heading and text and arrows inbetween for embed in an ACSF wysiwyg, currently used on two pages for the excelsior pass:
+- (coming shortly)
+- (standby)
 
 Embed all the code into the source of the full html view of a wysiwyg as done with other custom embeds.
 
