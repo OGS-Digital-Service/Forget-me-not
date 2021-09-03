@@ -98,7 +98,7 @@
     padding-top: 5px;
 }
 .logo_img {
-    height: 40px;
+    height: 40px !important;
     width: 40px;
     float: left;
     padding-left: 8px;
@@ -154,34 +154,35 @@ span.sub_head {
     bottom: 0px;
     right: 20px;
     width: 203px;
-    height: 52px;
     background-color: #0b5d66;
     border-radius: 14px 14px 14px 14px;
     transition: all .3s ease-out;
     margin-right: 4rem;
     margin-bottom: 9px;
+    z-index:501;
+    padding:3px;
     
 }
 
 .CTA_text {
     color: white;
-    font-size: 15px;
-    font-family: 'proxima_nova_regular';
+    font-size: 15px; 
     margin-left: 10px;
     line-height: 1;
-    margin-top: -21px;
     font-weight: normal;
+    margin-top: -11px;
+    padding-bottom: 11px;
 }
 
 .cross_on_bot_icon {
     display: block;
     transform: rotate(45deg);
     font-size: 22px;
-    margin: 0px -11px 0px 28px;
+    margin: 0px -1px 0px 28px;
     cursor: pointer;
     color: white;
     margin-left: 181px;
-    margin-top: 4px;
+    
 }
 
 .CTA_text_container {
@@ -201,7 +202,7 @@ span.sub_head {
     cursor: pointer;
     color: white;
     margin-left: 173px;
-    margin-top: -8px;
+    margin-top: -6px;
 }
 @-moz-document url-prefix() {
     .icon_up {
