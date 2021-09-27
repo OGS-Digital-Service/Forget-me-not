@@ -41,3 +41,13 @@
 .keypoint .keypoint--field-webny-summary-argument3 p > a {
     color: #005ac2 !important;
 }
+
+
+/* summary cta button */
+.keypoint--field-webny-summary-cta a:visited, .keypoint--field-webny-summary-cta a:link {
+    background-color: #24387E !important;
+}
+
+.keypoint--field-webny-summary-cta a:hover {
+    background-color: #000 !important;
+}
