@@ -11,7 +11,3 @@ These are style overrides to do the following:
 To use this on the homepage:
 - copy everything in the embed-code.html file into a wysiwyg in full html source view
 - turn off source but leave in full html and save the page 
-- check to see that everything isn't broken
-- panic
-- delete if broken
-- email jeff
