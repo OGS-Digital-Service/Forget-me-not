@@ -1,16 +1,59 @@
 <style type="text/css">
 .nysds_exit-button {
-    background-color: #4B6576;
-    font-size: 1.2em !important;
-    color: #fff !important;
-    padding: 9px;
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    color: #000;
+    padding: 0.6rem 1rem;
     margin-right: 0.5rem;
+    border: 1px solid #000;
+    text-decoration: none !important;
 }
 
 .nysds_exit-button:hover {
     background-color: #000;
+    color: #fff !important;
+    text-decoration: underline !important;
 }
+
+.nysds_exit-button::before {
+    content: url("data:image/svg+xml,%3Csvg aria-hidden='true' width='24' height='24'  focusable='false' data-prefix='fas' data-icon='times-circle' class='svg-inline--fa fa-times-circle fa-w-16 nysds_exit-icon' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 100'%3E%3Cpath fill='%23000000' d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'%3E%3C/path%3E%3C/svg%3E");
+}
+.nysds_exit-button:hover::before {
+    content: url("data:image/svg+xml,%3Csvg aria-hidden='true' width='24' height='24'  focusable='false' data-prefix='fas' data-icon='times-circle' class='svg-inline--fa fa-times-circle fa-w-16 nysds_exit-icon' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 100'%3E%3Cpath fill='%23ffffff' d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'%3E%3C/path%3E%3C/svg%3E");
+}
+@media (max-width: 640px) {
+.nysds_exit-area {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+}
+.nysds_exit-area p {
+    margin-top: 0.5rem !important;
+}
+}
+.nysds_exit-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.nysds_exit-area p {
+    font-size: 0.9rem !important;
+    width: 75%;
+    margin-left: 1rem !important;
+    text-align: left !important;
+}
+
+
+#secondary-navigation {
+    background-color: #cecece !important;
+}
+
 </style>
-<p> 
-<a href="https://www.google.com" class="nysds_exit-button"> EXIT THE WEBSITE NOW </a>
-Click this button if you need to leave the page immediately for your safety. Computer use can be monitored and this page will still appear in your web history. </p>
+<div class="nysds_exit-area"> 
+<a href="https://www.google.com" class="nysds_exit-button"> 
+EXIT THE WEBSITE NOW</a>
+<p>Click this button if you need to leave the page immediately for your safety. Computer use can be monitored and this page will still appear in your web history. </p></div>
