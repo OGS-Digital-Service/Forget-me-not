@@ -16,6 +16,10 @@ This repo stores the various code pieces needed to use the NYSDS Langauage Switc
 4. The JS here is a bit rudimentary and can probably be improved upon or made more efficient. Feel free to open a PR/issue for that.
 5. The insert-snippets.js is another brute force method of adding in the two banners and their corresponding js to above the universal navigation and below the universal footer. If you go that route you'll need the translate-banners.css to exist somewhere on the site too.
 
+## Demo Pages
+- https://distrodemo.ny.gov/translate-banner-test 
+- https://ogs-digital-service.github.io/language-access/ 
+
 ## Problems? 
 "Fix it yourself, websites aren't that hard." - Ron Swanson
 
