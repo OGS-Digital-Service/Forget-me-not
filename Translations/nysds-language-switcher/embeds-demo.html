@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title> This is a demo of the embeds only </title>
+
+
+<!-- script to parse url, remove prefix, re-add the correct prefix based on selection and then deliver it to the value or href as needed. Needs to occur after pageload and in head. -->
+<script>window.onload = function () {
+    function getHostName(url) {
+        var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
+        if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
+        return match[2];
+        }
+        else {
+            return null;
+        }
+    }
+    function getDomain(url) {
+        var hostName = getHostName(url);
+        var domain = hostName;
+        var parts = hostName.split('.');
+    
+        if (hostName != null) {
+           
+            if (["es","ar","bn","zh","fr","ht","it","ko","pl","ru","ur","yi"].includes(parts[0])){
+              let urlArray = parts.slice(1,20);
+              domain = urlArray.join(".")
+                }
+    
+        }
+        return domain;
+    }
+    
+    const prot = window.location.protocol;
+    const hre = window.location.href;
+    const path = window.location.pathname;
+    const search = window.location.search; 
+    const getd = getDomain(hre);
+    const makeprot = prot + "//";
+    const makeurl =  getd + path + search;
+    
+    var enUrl = makeprot + makeurl;
+    var esUrl = makeprot + "es." + makeurl
+    var arUrl = makeprot + "ar." + makeurl;
+    var bnUrl = makeprot + "bn." + makeurl;
+    var zhUrl = makeprot + "zh." + makeurl;
+    var frUrl = makeprot + "fr." + makeurl;
+    var htUrl = makeprot + "ht." + makeurl;
+    var itUrl = makeprot + "it." + makeurl;
+    var koUrl = makeprot + "ko." + makeurl;
+    var plUrl = makeprot + "pl." + makeurl;
+    var ruUrl = makeprot + "ru." + makeurl;
+    var urUrl = makeprot + "ur." + makeurl;
+    var yiUrl = makeprot + "yi." + makeurl;
+    var en = document.getElementsByClassName("en-english");
+    var es = document.getElementsByClassName("es-spanish");
+    var ar = document.getElementsByClassName("ar-arabic");
+    var bn = document.getElementsByClassName("bn-bengali");
+    var zh = document.getElementsByClassName("zh-chinese");
+    var fr = document.getElementsByClassName("fr-french");
+    var ht = document.getElementsByClassName("ht-haitian-creole");
+    var it = document.getElementsByClassName("it-italian");
+    var ko = document.getElementsByClassName("ko-korean");
+    var pl = document.getElementsByClassName("pl-polish");
+    var ru = document.getElementsByClassName("ru-russian");
+    var ur = document.getElementsByClassName("ur-urdu");
+    var yi = document.getElementsByClassName("yi-yiddish");  
+            for (var x=0; x < en.length, x < es.length, x < ar.length, x < bn.length, x < zh.length, x < fr.length, x < ht.length, x < it.length, x < ko.length, x < pl.length, x < ru.length, x < ur.length, x < yi.length; x++) {
+                
+                if (en[x].value == null ){en[x].setAttribute('href', enUrl);} else {en[x].setAttribute('value', enUrl);}
+                if (es[x].value == null ){es[x].setAttribute('href', esUrl);} else {es[x].setAttribute('value', esUrl);}
+                if (ar[x].value == null ){ar[x].setAttribute('href', arUrl);} else {ar[x].setAttribute('value', arUrl);}
+                if (bn[x].value == null ){bn[x].setAttribute('href', bnUrl);} else {bn[x].setAttribute('value', bnUrl);}
+                if (zh[x].value == null ){zh[x].setAttribute('href', zhUrl);} else {zh[x].setAttribute('value', zhUrl);}
+                if (fr[x].value == null ){fr[x].setAttribute('href', frUrl);} else {fr[x].setAttribute('value', frUrl);}
+                if (ht[x].value == null ){ht[x].setAttribute('href', htUrl);} else {ht[x].setAttribute('value', htUrl);}
+                if (it[x].value == null ){it[x].setAttribute('href', itUrl);} else {it[x].setAttribute('value', itUrl);}
+                if (ko[x].value == null ){ko[x].setAttribute('href', koUrl);} else {ko[x].setAttribute('value', koUrl);}
+                if (pl[x].value == null ){pl[x].setAttribute('href', plUrl);} else {pl[x].setAttribute('value', plUrl);}
+                if (ru[x].value == null ){ru[x].setAttribute('href', ruUrl);} else {ru[x].setAttribute('value', ruUrl);}
+                if (ur[x].value == null ){ur[x].setAttribute('href', urUrl);} else {ur[x].setAttribute('value', urUrl);}
+                if (yi[x].value == null ){yi[x].setAttribute('href', yiUrl);} else {yi[x].setAttribute('value', yiUrl);}
+                }  
+    
+}
+</script>
+
+<!-- unmin styles scoped to these components. They should be fine although some spacing may need to get adjusted and if font-awesome is not loaded or is a different font name then the nysds-globe-icon-wrap::before will need that pointed to the correct font -->
+<style>
+.nysds-normalize {
+  font-size: 16px;
+}
+
+.nysds-close-icon {
+  background: url(data:image/svg+xml,%3Csvg%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20data-prefix%3D%22fas%22%20data-icon%3D%22times%22%20class%3D%22svg-inline--fa%20fa-times%20fa-w-11%22%20role%3D%22img%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20352%20512%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M242.72%20256l100.07-100.07c12.28-12.28%2012.28-32.19%200-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48%200L176%20189.28%2075.93%2089.21c-12.28-12.28-32.19-12.28-44.48%200L9.21%20111.45c-12.28%2012.28-12.28%2032.19%200%2044.48L109.28%20256%209.21%20356.07c-12.28%2012.28-12.28%2032.19%200%2044.48l22.24%2022.24c12.28%2012.28%2032.2%2012.28%2044.48%200L176%20322.72l100.07%20100.07c12.28%2012.28%2032.2%2012.28%2044.48%200l22.24-22.24c12.28-12.28%2012.28-32.19%200-44.48L242.72%20256z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E);
+   background-repeat: no-repeat;
+    background-size: auto 20px;
+    background-position: center;
+    width:40px;
+}
+
+.nysds-close-button {
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
+  min-height: 24px;
+  position: absolute;
+  right: 4%;
+  bottom: 30%;
+  padding: 28px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+ .inline-flex {
+  display: inline-flex;
+}
+
+.mx-2 {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.pt-0\.5 {
+  padding-top: 0.125rem;
+} 
+
+.nysds-footer-insert-banner .globe-icon {
+  background: url(data:image/svg+xml,%3Csvg%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20data-prefix%3D%22fas%22%20data-icon%3D%22globe%22%20class%3D%22svg-inline--fa%20fa-globe%20fa-w-16%22%20role%3D%22img%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20496%20512%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M336.5%20160C322%2070.7%20287.8%208%20248%208s-74%2062.7-88.5%20152h177zM152%20256c0%2022.2%201.2%2043.5%203.3%2064h185.3c2.1-20.5%203.3-41.8%203.3-64s-1.2-43.5-3.3-64H155.3c-2.1%2020.5-3.3%2041.8-3.3%2064zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6%2024.4%2033.8%2041.2%2084.7%2050%20141.6h108zM177.2%2018.4C105.8%2039.6%2047.8%2092.1%2019.3%20160h108c8.7-56.9%2025.5-107.8%2049.9-141.6zM487.4%20192H372.7c2.1%2021%203.3%2042.5%203.3%2064s-1.2%2043-3.3%2064h114.6c5.5-20.5%208.6-41.8%208.6-64s-3.1-43.5-8.5-64zM120%20256c0-21.5%201.2-43%203.3-64H8.6C3.2%20212.5%200%20233.8%200%20256s3.2%2043.5%208.6%2064h114.6c-2-21-3.2-42.5-3.2-64zm39.5%2096c14.5%2089.3%2048.7%20152%2088.5%20152s74-62.7%2088.5-152h-177zm159.3%20141.6c71.4-21.2%20129.4-73.7%20158-141.6h-108c-8.8%2056.9-25.6%20107.8-50%20141.6zM19.3%20352c28.6%2067.9%2086.5%20120.4%20158%20141.6-24.4-33.8-41.2-84.7-50-141.6h-108z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E);
+  background-repeat: no-repeat;
+  background-size: auto 16px;
+  background-position: center;
+  width: 16px;
+}
+
+.nysds-unav-translate-banner .globe-icon {
+  background: url(data:image/svg+xml,%3Csvg%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20data-prefix%3D%22fas%22%20data-icon%3D%22globe%22%20class%3D%22svg-inline--fa%20fa-globe%20fa-w-16%22%20role%3D%22img%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20496%20512%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M336.5%20160C322%2070.7%20287.8%208%20248%208s-74%2062.7-88.5%20152h177zM152%20256c0%2022.2%201.2%2043.5%203.3%2064h185.3c2.1-20.5%203.3-41.8%203.3-64s-1.2-43.5-3.3-64H155.3c-2.1%2020.5-3.3%2041.8-3.3%2064zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6%2024.4%2033.8%2041.2%2084.7%2050%20141.6h108zM177.2%2018.4C105.8%2039.6%2047.8%2092.1%2019.3%20160h108c8.7-56.9%2025.5-107.8%2049.9-141.6zM487.4%20192H372.7c2.1%2021%203.3%2042.5%203.3%2064s-1.2%2043-3.3%2064h114.6c5.5-20.5%208.6-41.8%208.6-64s-3.1-43.5-8.5-64zM120%20256c0-21.5%201.2-43%203.3-64H8.6C3.2%20212.5%200%20233.8%200%20256s3.2%2043.5%208.6%2064h114.6c-2-21-3.2-42.5-3.2-64zm39.5%2096c14.5%2089.3%2048.7%20152%2088.5%20152s74-62.7%2088.5-152h-177zm159.3%20141.6c71.4-21.2%20129.4-73.7%20158-141.6h-108c-8.8%2056.9-25.6%20107.8-50%20141.6zM19.3%20352c28.6%2067.9%2086.5%20120.4%20158%20141.6-24.4-33.8-41.2-84.7-50-141.6h-108z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E);
+  background-repeat: no-repeat;
+  background-size: auto 16px;
+  background-position: center;
+  width: 16px;
+}
+
+
+.nysds-unav-translate-banner .nysds-translate-group select {
+    font-family: "Proxima Nova",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 600;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 7em;
+    border: none;
+    background: url(data:image/svg+xml,%3Csvg%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20data-prefix%3D%22fas%22%20data-icon%3D%22angle-down%22%20class%3D%22svg-inline--fa%20fa-angle-down%20fa-w-10%22%20role%3D%22img%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20512%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M143%20352.3L7%20216.3c-9.4-9.4-9.4-24.6%200-33.9l22.6-22.6c9.4-9.4%2024.6-9.4%2033.9%200l96.4%2096.4%2096.4-96.4c9.4-9.4%2024.6-9.4%2033.9%200l22.6%2022.6c9.4%209.4%209.4%2024.6%200%2033.9l-136%20136c-9.2%209.4-24.4%209.4-33.8%200z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E);
+    background-repeat: no-repeat;
+    background-size: auto 1.5rem;
+    background-position:right;
+    background-color: transparent;
+    -webkit-appearance: none;
+    margin: 0px 10px;
+    width: auto !important;
+    height: auto !important;
+    padding:0;
+    border-radius: 0px;
+}
+
+.nysds-translate-group select {
+    font-family: "Proxima Nova",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 600;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border: 3px solid #fff;
+    background: url(data:image/svg+xml,%3Csvg%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20data-prefix%3D%22fas%22%20data-icon%3D%22angle-down%22%20class%3D%22svg-inline--fa%20fa-angle-down%20fa-w-10%22%20role%3D%22img%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20512%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M143%20352.3L7%20216.3c-9.4-9.4-9.4-24.6%200-33.9l22.6-22.6c9.4-9.4%2024.6-9.4%2033.9%200l96.4%2096.4%2096.4-96.4c9.4-9.4%2024.6-9.4%2033.9%200l22.6%2022.6c9.4%209.4%209.4%2024.6%200%2033.9l-136%20136c-9.2%209.4-24.4%209.4-33.8%200z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E);
+    background-repeat: no-repeat;
+    background-size: auto 1.5rem;
+    background-position: 95%;
+    background-color: transparent;
+    -webkit-appearance: none;
+    margin: 0;
+    height: auto !important;
+    padding: 10px;
+    border-radius: 0px;
+}
+
+.nysds-translate-group select:focus {
+  outline: 3px solid #FACE00;
+  outline-offset: -3px;
+}
+
+.nysds-translate-group button:focus {
+  outline: 3px solid #FACE00;
+}
+
+.nysds-select option {
+  color: #000;
+  background-color: #ededed;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.nysds-select option[value=""][disabled] {
+  display: none;
+}
+
+.nysds-translate-group {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.nysds-cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left:0;
+  background-color: rgba(0,0,0,0.9);
+  width: 100%;
+  padding: 2.5rem 0;
+  font-size: 16px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.nysds-unav-translate-banner {
+  position: relative;
+  z-index: 501;
+  color: #000;
+  background-color: #ededed;
+  height: 35px;
+}
+
+.nysds-unav-translate-banner .nysds-translate-group {
+  padding: 5px 0px;
+}
+
+.nysds-footer-insert-banner {
+  background-color: #333;
+  position: relative;
+  padding: 24px;
+  z-index: 600;
+  width: auto;
+  border-top: 2px solid #62666A;
+  color: #fff;
+}
+
+.nysds-caption-text {
+  margin: 0 2em 1em 0;
+}
+
+.nysds-translation-services {
+  display: flex;
+  margin-bottom: 1.5em;
+  flex-direction: column;
+}
+ 
+.nysds-globe-icon-wrap {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.nysds-globe-icon-wrap:hover {
+  color: #FACE00;
+}
+
+.nysds-translation-services div a {
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  margin-right: 0;
+}
+
+.nysds-translation-services a:hover {
+  border-bottom: 1px solid #FACE00;
+  color: #FACE00;
+}
+
+.nysds-translation-services a:focus {
+  color: #FACE00;
+}
+
+.nysds-globe-icon-wrap::before {
+  content: "\f0ac" !important;
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.nysds-inline-languages {
+  display: none;
+}
+
+.nysds-inline-languages ul {
+  list-style-type: none;
+  padding: inherit;
+}
+
+.nysds-inline-languages ul li {
+  display: inline-block;
+  padding: 1em 2em 1em 0;
+}
+
+.nysds-inline-languages ul li a {
+  margin-right: 0;
+}
+
+.nysds-inline-languages a {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  text-decoration: none;
+  margin-right: 2em;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.nysds-inline-languages a:hover {
+  color: #FACE00;
+  border-bottom: 1px solid #FACE00;
+}
+
+.nysds-inline-languages a:focus-within {
+  color: #FACE00;
+  border-bottom: 1px solid #FACE00;
+  text-decoration: none;
+}
+
+.nysds-inline-languages a:focus {
+  outline: 2px solid #FACE00;
+  outline-offset: 5px;
+}
+
+.nysds-inline-languages a:focus-within {
+  color: #FACE00;
+  border-bottom: 1px solid #FACE00;
+  text-decoration: none;
+}
+
+.nysds-footer-insert-banner .nysds-translate-group {
+     display: flex;
+    }
+
+@media (min-width: 640px) {
+    .nysds-caption-text {
+        margin-bottom: 0;
+    }
+
+    .nysds-translate-group {
+        flex-direction: row;
+    }
+
+    .nysds-close-button {
+        position: relative;
+        right: 2%;
+        bottom: 0;
+        padding: 4px;
+    }
+    .nysds-inline-languages {
+        display: flex;
+        flex-direction: column;
+        margin-left:5%;
+    }
+    .nysds-footer-insert-banner .nysds-translate-group {
+      display: none;
+    }
+    .nysds-translation-services {
+      flex-direction: row;
+      margin-bottom: 0.25em;
+
+    }
+}
+</style>
+
+</head>
+
+<body>
+<article class="nysds-unav-translate-banner nysds-normalize"><!-- this is the above unav insert -->
+    <div class="nysds-translate-group">
+        <div class="inline-flex">
+            <div class="globe-icon" aria-hidden="true"></div>
+            <label class="sr-only" id="translate-label" for="langs">
+                Select your language preference
+            </label>
+            <select class="nysds-select" id="langs" name="languages" aria-labelledby="translate-label" autocomplete="off">
+                <option lang="en" value="" disabled selected hidden>Translate</option>
+                <option lang="en" value="en" class="en-english" >English</option>
+                <option lang="es" value="es" class="es-spanish">Español</option>
+                <option lang="ar" value="ar" class="ar-arabic">عربى</option>
+                <option lang="bn" value="bn" class="bn-bengali">বাঙালি</option>
+                <option lang="zh" value="zh" class="zh-chinese">中文</option>
+                <option lang="fr" value="fr" class="fr-french">Français</option>
+                <option lang="ht" value="ht" class="ht-haitian-creole">Kreyòl ayisyen</option>
+                <option lang="it" value="it" class="it-italian">Italiano</option>
+                <option lang="ko" value="ko" class="ko-korean">한국어</option>
+                <option lang="pl" value="pl" class="pl-polish">Polski</option>
+                <option lang="ru" value="ru" class="ru-russian">Русскийy</option>
+                <option lang="ur" value="ur" class="ur-urdu">اردو</option>
+                <option lang="yi" value="yi" class="yi-yiddish">יידיש</option>
+            </select>
+        </div>
+    </div>
+</article>
+
+
+<div style="height: 80em; text-align: center; padding-top: 350px;"> This is a placeholder. Don't use it for anything in production. Fonts won't load here because that's not the point of this. They will in a real site. There's no duplicate IDs or anything here either.</div>
+
+
+<article class="nysds-footer-insert-banner nysds-normalize"> <!-- this is the footer insert -->
+        <section class="nysds-inline-languages"> <!-- desktop & tablet -->
+            <div class="nysds-translation-services"><div class="nysds-globe-icon-wrap"><a href="#">Translation Services</a></div><span class="pt-0.5 ml-8">This page is available in other languages</span></div>
+              <ul>
+                <li><a lang="en"  href="#" title="English" class="en-english">English</a></li>
+                <li><a lang="es"  href="#" title="Spanish" class="es-spanish">Español</a></li>
+                <li><a lang="ar"  href="#" title="Arabic" class="ar-arabic">عربى</a></li>
+                <li><a lang="bn"  href="#" title="Bengali" class="bn-bengali">বাঙালি</a></li>
+                <li><a lang="zh"  href="#" title="Chinese" class="zh-chinese">中文</a></li>
+                <li><a lang="fr"  href="#" title="French" class="fr-french">Français</a></li>
+                <li><a lang="ht"  href="#" title="Haitian-Creole" class="ht-haitian-creole">Kreyòl ayisyen</a></li>
+                <li><a lang="it"  href="#" title="Italian" class="it-italian">Italiano</a></li>
+                <li><a lang="ko"  href="#" title="Korean" class="ko-korean">한국어</a></li>
+                <li><a lang="pl"  href="#" title="Polish" class="pl-polish">Polski</a></li>
+                <li><a lang="ru"  href="#" title="Russian" class="ru-russian">Русскийy</a></li>
+                <li><a lang="ur"  href="#" title="Urdu" class="ur-urdu">اردو</a></li>
+                <li><a lang="yi"  href="#" title="Yiddish" class="yi-yiddish">יידיש</a></li>
+              <ul>
+        </section>
+    <section class="nysds-translate-group"> <!-- mobile -->
+        <div class="nysds-translation-services"><div class="nysds-globe-icon-wrap mb-4"><a href="#">Translation Services</a></div>This page is available in other languages. Select your language preference</div>
+        <div class="inline-flex">
+            <label class="sr-only" id="translate-label-footer" for="langs-footer">
+                Select your language preference
+            </label>
+            <select class="nysds-select" id="langs-footer" name="languages" aria-labelledby="translate-label-footer">
+                <option lang="en" value="" disabled selected hidden>Translate</option>
+                <option lang="en" value="en" class="en-english">English</option>
+                <option lang="es" value="es" class="es-spanish">Español</option>
+                <option lang="ar" value="ar" class="ar-arabic">عربى</option>
+                <option lang="bn" value="bn" class="bn-bengali">বাঙালি</option>
+                <option lang="zh" value="zh" class="zh-chinese">中文</option>
+                <option lang="fr" value="fr" class="fr-french">Français</option>
+                <option lang="ht" value="ht" class="ht-haitian-creole">Kreyòl ayisyen</option>
+                <option lang="it" value="it" class="it-italian">Italiano</option>
+                <option lang="ko" value="ko" class="ko-korean">한국어</option>
+                <option lang="pl" value="pl" class="pl-polish">Polski</option>
+                <option lang="ru" value="ru" class="ru-russian">Русскийy</option>
+                <option lang="ur" value="ur" class="ur-urdu">اردو</option>
+                <option lang="yi" value="yi" class="yi-yiddish">יידיש</option>
+            </select>
+        </div>
+    </section> 
+</article>
+
+
+<!-- this needs to get initialized after the footer is in the dom, there's probably a better way to do this but I'm not that great at JS -->
+<script> 
+  document.getElementById("langs").addEventListener('change', function () {
+        window.location = this.value;
+    });
+    document.getElementById("langs-footer").addEventListener('change', function () {
+        window.location = this.value;
+    });
+</script>
+</body>
+</html>
