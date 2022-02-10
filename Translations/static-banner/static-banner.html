@@ -1,0 +1,70 @@
+<style>
+.nysds-close-button {
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
+  min-height: 24px;
+  padding: 28px;
+}
+.nysds-close-icon {
+  background: url(data:image/svg+xml,%3Csvg%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%20data-prefix%3D%22fas%22%20data-icon%3D%22times%22%20class%3D%22svg-inline--fa%20fa-times%20fa-w-11%22%20role%3D%22img%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20352%20512%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M242.72%20256l100.07-100.07c12.28-12.28%2012.28-32.19%200-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48%200L176%20189.28%2075.93%2089.21c-12.28-12.28-32.19-12.28-44.48%200L9.21%20111.45c-12.28%2012.28-12.28%2032.19%200%2044.48L109.28%20256%209.21%20356.07c-12.28%2012.28-12.28%2032.19%200%2044.48l22.24%2022.24c12.28%2012.28%2032.2%2012.28%2044.48%200L176%20322.72l100.07%20100.07c12.28%2012.28%2032.2%2012.28%2044.48%200l22.24-22.24c12.28-12.28%2012.28-32.19%200-44.48L242.72%20256z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E);
+   background-repeat: no-repeat;
+    background-size: auto 20px;
+    background-position: center;
+    width:40px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.nysds-static-banner {
+  position: fixed;
+  bottom: 0;
+  left:0;
+  background-color: rgba(0,0,0,0.9);
+  width: 100%;
+  padding: 0.25rem 0;
+  font-size: 16px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+.nysds-static-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 5%;
+    width: 100%;
+}
+.nysds-disclaimer {
+    margin: 0 2%;
+}
+</style>
+
+<article id="nysds-hide-this" class="nysds-static-banner">
+    <div class="nysds-static-wrap">
+        <div class="nysds-disclaimer"> This is a disclaimer that says you should or shouldn't do something. So do or don't do that please! (also you can close it)</div>
+        <button id="nysds-close" class="nysds-close-button nysds-close-icon" aria-labelledby="close-button-label">
+            <span class="sr-only" id="close-button-label">Close this notification banner</span>
+        </button>
+    </div>
+</article>
+
+<!-- obviously improve upon this by bundling js somewhere else -->
+<script>
+  var closeclose = document.getElementById("nysds-close");
+  if(closeclose){
+    closeclose.addEventListener("click", closestatic);
+    function closestatic () {
+    document.getElementById("nysds-hide-this").style.display = "none";
+    }
+    }
+</script>
