@@ -1,8 +1,7 @@
 <style>
-    /* only for this page wysiwyg to get full width */
-    .o-wysiwyg {
-    max-width: 100% !important; 
-    width: 100% !important;
+    .nysds-w-override {
+        max-width: 100% !important;
+        width: 100% !important;
     }
 </style>
 <script>
@@ -59,3 +58,11 @@
         });
 </script>
 <nysds-nstc-iconframe></nysds-nstc-iconframe>
+<script>
+    var iconframe = document.querySelector('nysds-nstc-iconframe');
+    function addstyle(){
+        var onlythis = iconframe.parentNode
+        onlythis.parentNode.classList.add('nysds-w-override')
+    }
+    document.addEventListener('load', addstyle())
+</script>
