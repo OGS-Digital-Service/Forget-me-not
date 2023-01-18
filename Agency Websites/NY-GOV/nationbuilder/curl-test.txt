@@ -1,0 +1,25 @@
+
+{
+  "person": {
+      "email": "test2@nationbuilder.com",
+      "first_name": "test2",
+      "last_name": "Support2"
+  },
+  "precinct": null
+}
+
+
+test getting first person on the list
+curl "https://nygov.nationbuilder.com/api/v1/people/1?access_token=[TOKEN]"
+
+
+
+
+ADD SOMEONE
+   curl -X POST "https://nygov.nationbuilder.com/api/v1/people?access_token=[TOKEN]"
+   -H 'Content-Type: application/json'
+   -H 'Accept: application/json'
+   -d '{"email":"test2@nationbuilder.com","first_name":"test2","last_name":"Support2" }'
+
+
+   curl -X POST "https://nygov.nationbuilder.com/api/v1/people?access_token=[TOKEN]" -H 'Content-Type: application/json' -H 'Accept: application/json' -d '{"person":{"email":"test2@nationbuilder.com","first_name":"test2","last_name":"Support2" },"precinct": null }'
