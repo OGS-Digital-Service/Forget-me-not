@@ -8,10 +8,11 @@ class digitalFeedback extends HTMLElement {
   }
   render() {
     const shadow = this.attachShadow({ mode: "open" });
-    const feedbackUrl = 'https://forms.ny.gov/s3/Child-Support-Online-Enrollment-Feedback'
+    const feedbackUrl = 'https://forms.ny.gov/s3/IES-Feedback'
     const colorPrimary ='#43285d'
     const colorSecondary = '#d3d5e3'
-    const questionPrompt = 'Was it easy to enroll?'
+    const questionPrompt = 'How was your experience?'
+    const feedbackLocation = window.location;
     shadow.innerHTML = `
         <style>
             .sr-only {
@@ -113,7 +114,7 @@ class digitalFeedback extends HTMLElement {
         <section class="nysds-feedback nysds-feedback-landing">
             <h3 class="nysds-feedback-heading" id="nysds-feedback-helpful">${questionPrompt}</h3>
             <div class="nysds-feedback-options" id="nysds-feedback-options-area">
-                <a  href="${feedbackUrl}?thumbs=Up" 
+                <a  href="${feedbackUrl}?thumbs=Up&referrerUrl=${feedbackLocation}" 
                     class="nysds-feedback-link" 
                     data-feedback="yes"
                     target="_blank"
@@ -121,9 +122,9 @@ class digitalFeedback extends HTMLElement {
                     >
                     <span class="nysds-feedback-thumbs" aria-hidden="true"></span>
                     Yes
-                    <span class="sr-only"> easy to enroll. Opens new window with survey.</span>
+                    <span class="sr-only"> easy to enroll. Opens new window with survey. </span>
                 </a>
-                <a  href="${feedbackUrl}?thumbs=Down" 
+                <a  href="${feedbackUrl}?thumbs=Down&referrerUrl=${feedbackLocation}" 
                     class="nysds-feedback-link" 
                     data-feedback="no"
                     target="_blank"
