@@ -11,7 +11,7 @@ class digitalFeedback extends HTMLElement {
     const feedbackUrl = 'https://forms.ny.gov/s3/IES-Feedback'
     const colorPrimary ='#43285d'
     const colorSecondary = '#d3d5e3'
-    const questionPrompt = 'How was your experience?'
+    const questionPrompt = 'Did this experience meet your expectations?'
     const feedbackLocation = window.location;
     shadow.innerHTML = `
         <style>
@@ -121,8 +121,7 @@ class digitalFeedback extends HTMLElement {
                     id="nysds-feedback-yes"
                     >
                     <span class="nysds-feedback-thumbs" aria-hidden="true"></span>
-                    Yes
-                    <span class="sr-only"> easy to enroll. Opens new window with survey. </span>
+                    <span>Yes. <span class="sr-only">Opens new window with survey. </span></span>
                 </a>
                 <a  href="${feedbackUrl}?thumbs=Down&referrerUrl=${feedbackLocation}" 
                     class="nysds-feedback-link" 
@@ -131,8 +130,7 @@ class digitalFeedback extends HTMLElement {
                     id="nysds-feedback-no"
                     >
                     <span class="nysds-feedback-thumbs nysds-feedback-transform" aria-hidden="true"></span>
-                    No
-                    <span class="sr-only"> not easy to enroll. Opens new window with survey.</span>
+                   <span>No. <span class="sr-only">Opens new window with survey. </span></span>
                 </a>
             </div>
         </section>
