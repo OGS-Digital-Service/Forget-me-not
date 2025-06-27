@@ -121,7 +121,7 @@ class digitalFeedback extends HTMLElement {
                     id="nysds-feedback-yes"
                     >
                     <span class="nysds-feedback-thumbs" aria-hidden="true"></span>
-                    <span>Yes. <span class="sr-only">Opens new window with survey. </span></span>
+                    <span>Yes <span class="sr-only">Opens new window with survey. </span></span>
                 </a>
                 <a  href="${feedbackUrl}?thumbs=Down&referrerUrl=${feedbackLocation}" 
                     class="nysds-feedback-link" 
@@ -130,7 +130,7 @@ class digitalFeedback extends HTMLElement {
                     id="nysds-feedback-no"
                     >
                     <span class="nysds-feedback-thumbs nysds-feedback-transform" aria-hidden="true"></span>
-                   <span>No. <span class="sr-only">Opens new window with survey. </span></span>
+                   <span>No <span class="sr-only">Opens new window with survey. </span></span>
                 </a>
             </div>
         </section>
